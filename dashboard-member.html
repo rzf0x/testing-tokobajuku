@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AromaVibe • Member Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .glass {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+      <nav class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 text-white font-semibold flex items-center justify-center">
+            AV
+          </div>
+          <div>
+            <p class="font-semibold text-lg">AromaVibe Society</p>
+            <p class="text-xs text-slate-500">Signature Member Area</p>
+          </div>
+        </a>
+        <div class="flex items-center gap-3 text-sm">
+          <a href="checkout.html" class="px-4 py-2 rounded-full border border-slate-200">Checkout</a>
+          <button class="px-4 py-2 rounded-full bg-slate-900 text-white">Profil</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-10 space-y-10">
+      <section class="glass rounded-3xl p-6 flex flex-col md:flex-row md:items-center gap-6">
+        <div class="flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=60" class="w-16 h-16 rounded-2xl object-cover" alt="Member" />
+          <div>
+            <p class="text-xs uppercase tracking-widest text-orange-500">Member Platinum</p>
+            <h1 class="text-2xl font-semibold">Patricia Adisurya</h1>
+            <p class="text-sm text-slate-500">Bergabung sejak 2019</p>
+          </div>
+        </div>
+        <div class="flex-1 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-2xl bg-slate-900 text-white p-4">
+            <p class="text-xs uppercase tracking-widest text-white/70">Loyalty Points</p>
+            <p class="text-2xl font-semibold mt-2">18.250</p>
+            <p class="text-xs">Berlaku hingga 31 Des 2025</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <p class="text-xs uppercase tracking-widest text-slate-500">Voucher aktif</p>
+            <p class="text-2xl font-semibold mt-2">3</p>
+            <p class="text-xs text-slate-500">AromaVibe Birthday Set</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid md:grid-cols-[1.4fr,0.6fr] gap-6">
+        <article class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Riwayat Pemesanan</p>
+              <h2 class="text-xl font-semibold">Pesanan terakhir</h2>
+            </div>
+            <button class="text-sm text-slate-500 hover:text-slate-900">Lihat semua</button>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div class="border border-slate-200 rounded-2xl p-4 flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=200&q=80" class="w-20 h-20 rounded-2xl object-cover" alt="Order" />
+              <div class="flex-1">
+                <p class="font-semibold">Aurum Bloom Limited Set</p>
+                <p class="text-xs text-slate-500">Order #ARV-2102 • 20 Nov 2025</p>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                  <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600">Selesai</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700">Tracking: GO-99811</span>
+                </div>
+              </div>
+              <p class="font-semibold">IDR 3.750.000</p>
+            </div>
+            <div class="border border-slate-200 rounded-2xl p-4 flex items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=200&q=80" class="w-20 h-20 rounded-2xl object-cover" alt="Order" />
+              <div class="flex-1">
+                <p class="font-semibold">Noir Suede</p>
+                <p class="text-xs text-slate-500">Order #ARV-2094 • 05 Nov 2025</p>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700">Sedang dikirim</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700">JNE YES • 12389344</span>
+                </div>
+              </div>
+              <p class="font-semibold">IDR 1.050.000</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">Status Pengiriman</p>
+            <h2 class="text-xl font-semibold">Live tracking</h2>
+          </div>
+          <ol class="space-y-4 text-sm">
+            <li class="flex gap-3">
+              <div class="flex flex-col items-center">
+                <span class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center">1</span>
+                <span class="flex-1 w-px bg-slate-200"></span>
+              </div>
+              <div>
+                <p class="font-semibold">Pesanan diproses</p>
+                <p class="text-xs text-slate-500">20 Nov 2025 • 09.15</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <div class="flex flex-col items-center">
+                <span class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">2</span>
+                <span class="flex-1 w-px bg-slate-200"></span>
+              </div>
+              <div>
+                <p class="font-semibold">QC & finishing botol</p>
+                <p class="text-xs text-slate-500">20 Nov 2025 • 15.47</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <div class="flex flex-col items-center">
+                <span class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center">3</span>
+              </div>
+              <div>
+                <p class="font-semibold">Sedang dikirim ke alamat Anda</p>
+                <p class="text-xs text-slate-500">GoSend Instant • Estimasi 18.30</p>
+              </div>
+            </li>
+          </ol>
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-xs">
+            Kartu ucapan digital siap diunduh setelah paket diterima. <a href="#" class="underline">Lihat preview</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid md:grid-cols-2 gap-6">
+        <article class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Wishlist</p>
+              <h2 class="text-xl font-semibold">Waiting list koleksi</h2>
+            </div>
+            <button class="text-sm text-slate-500 hover:text-slate-900">Tambah</button>
+          </div>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+              <div>
+                <p class="font-semibold">Serenity Oud 100ml</p>
+                <p class="text-xs text-slate-500">Pre-order batch Desember</p>
+              </div>
+              <button class="text-slate-900 font-semibold text-xs">Bayar</button>
+            </li>
+            <li class="flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+              <div>
+                <p class="font-semibold">Velvet Musk Solid Perfume</p>
+                <p class="text-xs text-slate-500">Notifikasi stok masuk</p>
+              </div>
+              <button class="text-slate-900 font-semibold text-xs">Aktif</button>
+            </li>
+            <li class="flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+              <div>
+                <p class="font-semibold">Aurum Bloom Gift Box</p>
+                <p class="text-xs text-slate-500">Edisi Lunar 2025</p>
+              </div>
+              <button class="text-slate-400 font-semibold text-xs" disabled>Full</button>
+            </li>
+          </ul>
+        </article>
+
+        <article class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Kartu Aroma Digital</p>
+              <h2 class="text-xl font-semibold">Upcoming experiences</h2>
+            </div>
+            <button class="text-sm text-slate-500 hover:text-slate-900">Unduh</button>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div class="border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
+              <div>
+                <p class="font-semibold">Atelier Session</p>
+                <p class="text-xs text-slate-500">1 Des 2025 • 19.00 • Showroom Wijaya</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs">Confirm</span>
+            </div>
+            <div class="border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
+              <div>
+                <p class="font-semibold">Private Scent Lab</p>
+                <p class="text-xs text-slate-500">12 Des 2025 • 15.00 • Atelier Bali</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-xs">Waitlist</span>
+            </div>
+            <div class="border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
+              <div>
+                <p class="font-semibold">Corporate Gifting Preview</p>
+                <p class="text-xs text-slate-500">Zoom • 7 Des 2025 • 10.00</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs">Invite sent</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-8">
+      <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
+        <p>© 2025 AromaVibe Society.</p>
+        <p class="text-slate-400">Concierge WhatsApp +62 812 1234 5678</p>
+      </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 right-6 hidden px-4 py-3 rounded-2xl bg-slate-900 text-white text-sm font-semibold"></div>
+
+    <script>
+      const toast = document.getElementById("toast");
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.remove("hidden");
+        setTimeout(() => toast.classList.add("hidden"), 2200);
+      }
+
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const text = (btn.textContent || "").toLowerCase();
+          if (text.includes("profil")) {
+            showToast("Profil member akan tersedia segera.");
+          } else if (text.includes("tambah")) {
+            showToast("Wishlist baru berhasil ditambahkan.");
+          } else if (text.includes("unduh")) {
+            showToast("Kartu aroma digital dikirim ke email.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+

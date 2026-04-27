@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AromaVibe - Toko Minyak Wangi Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .glass {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
+      }
+
+      .floating {
+        animation: floating 6s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .gradient-text {
+        background: linear-gradient(120deg, #f97316, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <header class="bg-white/90 sticky top-0 z-20 border-b border-slate-200">
+      <nav
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white font-semibold"
+          >
+            AV
+          </div>
+          <div>
+            <p class="font-semibold text-lg">AromaVibe</p>
+            <p class="text-xs text-slate-500">Signature Scents Boutique</p>
+          </div>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm text-slate-600">
+          <a href="#produk" class="hover:text-slate-900">Produk</a>
+          <a href="#promo" class="hover:text-slate-900">Promo</a>
+          <a href="#testimoni" class="hover:text-slate-900">Testimoni</a>
+          <a href="#kontak" class="hover:text-slate-900">Hubungi Kami</a>
+        </div>
+        <button
+          id="cartToggle"
+          class="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-sm"
+        >
+          <span>Keranjang</span>
+          <span
+            id="cartCount"
+            class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-orange-400 text-xs font-semibold"
+            >0</span
+          >
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="max-w-6xl mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row gap-16 items-center"
+      >
+        <div class="flex-1 space-y-6">
+          <span
+            class="text-sm font-semibold tracking-wide uppercase text-orange-500"
+            >Premium Artisan Perfumes</span
+          >
+          <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+            Temukan <span class="gradient-text">Identitas Aroma</span> Anda
+            bersama AromaVibe.
+          </h1>
+          <p class="text-slate-600">
+            Koleksi parfum artisan kami diracik dari bahan terbaik dunia untuk
+            memberikan pengalaman aroma yang berkelas, tahan lama, dan
+            mencerminkan kepribadian Anda.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="px-6 py-3 rounded-full text-white bg-slate-900 text-sm font-semibold hover:bg-slate-800 transition"
+            >
+              Lihat Koleksi
+            </button>
+            <button
+              class="px-6 py-3 rounded-full border border-slate-300 text-sm font-semibold hover:border-slate-900 transition"
+            >
+              Konsultasi Aroma
+            </button>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div class="p-4 rounded-2xl bg-white shadow-sm">
+              <p class="text-2xl font-semibold text-slate-900">10K+</p>
+              <p class="text-xs text-slate-500">Pelanggan puas</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white shadow-sm">
+              <p class="text-2xl font-semibold text-slate-900">60ml</p>
+              <p class="text-xs text-slate-500">Kemasan eksklusif</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white shadow-sm">
+              <p class="text-2xl font-semibold text-slate-900">48 Jam</p>
+              <p class="text-xs text-slate-500">Ketahanan aroma</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white shadow-sm">
+              <p class="text-2xl font-semibold text-slate-900">ISO</p>
+              <p class="text-xs text-slate-500">Sertifikasi</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 relative">
+          <div
+            class="floating absolute -top-12 -right-8 w-48 h-48 rounded-full bg-gradient-to-br from-orange-400 via-pink-500 to-purple-500 opacity-20 blur-2xl"
+          ></div>
+          <div class="glass rounded-3xl p-6 relative">
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+              alt="Parfum Premium"
+              class="rounded-2xl w-full object-cover"
+            />
+            <div
+              class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-2xl px-6 py-4 text-center"
+            >
+              <p class="font-semibold">Serenity Oud</p>
+              <p class="text-sm text-slate-500">Signature Best Seller</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white border-y border-slate-100">
+        <div
+          class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-sm text-slate-600"
+        >
+          <div>
+            <p class="font-semibold text-slate-900">Free Shipping</p>
+            <p>Gratis ongkir ke seluruh Indonesia</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-900">Garansi Aroma</p>
+            <p>Refund 7 hari jika tidak cocok</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-900">Eksklusif</p>
+            <p>Terbatas 200 botol / batch</p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-900">Konsultasi</p>
+            <p>Curated oleh parfum expert</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="produk" class="max-w-6xl mx-auto px-4 py-16 space-y-10">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+        >
+          <div>
+            <p
+              class="text-sm uppercase tracking-widest text-orange-500 font-semibold"
+            >
+              Koleksi Spesial
+            </p>
+            <h2 class="text-3xl font-bold mt-2">Pilih Aroma Favorit Anda</h2>
+            <p class="text-slate-600 mt-3">
+              Semua parfum menggunakan konsentrat Eau de Parfum (EDP) dengan
+              ketahanan aroma hingga 48 jam.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Cari aroma..."
+              class="px-4 py-2 rounded-full border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm"
+            />
+            <select
+              id="categorySelect"
+              class="px-4 py-2 rounded-full border border-slate-300 text-sm"
+            >
+              <option value="all">Semua Kategori</option>
+            </select>
+            <div
+              class="flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-slate-300"
+            >
+              <label for="priceRange" class="text-slate-600">Max IDR</label>
+              <input
+                id="priceRange"
+                type="range"
+                min="350000"
+                max="1250000"
+                value="1250000"
+                step="50000"
+              />
+              <span id="priceLabel" class="font-semibold text-slate-900"
+                >1.250.000</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="productGrid"
+          class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        ></div>
+      </section>
+
+      <section
+        id="promo"
+        class="bg-gradient-to-br from-orange-50 to-pink-50 py-16"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center"
+        >
+          <div>
+            <p
+              class="text-sm uppercase tracking-widest text-orange-500 font-semibold"
+            >
+              Limited Release
+            </p>
+            <h3 class="text-3xl font-bold mt-3">
+              Koleksi <span class="gradient-text">Aurum Bloom</span> edisi Lunar
+              2025.
+            </h3>
+            <p class="text-slate-600 mt-4">
+              Diracik dari Bulgarian Rose absolute, saffron Kashmir, dan white
+              amber. Diproduksi hanya 150 set dengan kemasan numerik eksklusif.
+            </p>
+            <ul class="mt-6 space-y-3 text-slate-700">
+              <li>• Free engraved name pada botol</li>
+              <li>• Sertifikat keaslian & garansi resmi</li>
+              <li>• Konsultasi personal dengan scent designer</li>
+            </ul>
+            <div class="flex gap-4 mt-6">
+              <button
+                class="px-6 py-3 rounded-full bg-slate-900 text-white text-sm font-semibold"
+              >
+                Pre-Order Sekarang
+              </button>
+              <button
+                class="px-6 py-3 rounded-full border border-slate-300 text-sm font-semibold"
+              >
+                Pelajari Detail
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-orange-200 to-pink-200 rounded-3xl opacity-70 blur-2xl"
+            ></div>
+            <div class="relative glass rounded-3xl p-6 space-y-6">
+              <img
+                src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=900&q=80"
+                alt="Limited Perfume"
+                class="rounded-2xl w-full object-cover"
+              />
+              <div
+                class="flex items-center justify-between text-sm text-slate-600"
+              >
+                <p>
+                  Hanya tersisa
+                  <span class="font-semibold text-slate-900">87</span> set
+                </p>
+                <p>
+                  Harga mulai
+                  <span class="font-semibold text-slate-900"
+                    >IDR 1.450.000</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="keranjang"
+        class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-[2fr,1fr] gap-10"
+      >
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-2xl font-bold">Keranjang Belanja</h3>
+            <button
+              id="emptyCart"
+              class="text-sm text-red-500 hover:text-red-600"
+            >
+              Kosongkan
+            </button>
+          </div>
+          <div
+            class="overflow-hidden rounded-2xl border border-slate-200 bg-white"
+          >
+            <table class="min-w-full text-sm">
+              <thead class="bg-slate-50 border-b border-slate-200">
+                <tr>
+                  <th class="px-4 py-3 text-left font-medium text-slate-500">
+                    Produk
+                  </th>
+                  <th class="px-4 py-3 text-left font-medium text-slate-500">
+                    Harga
+                  </th>
+                  <th class="px-4 py-3 text-left font-medium text-slate-500">
+                    Qty
+                  </th>
+                  <th class="px-4 py-3 text-left font-medium text-slate-500">
+                    Total
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cartBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div
+            class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4"
+          >
+            <h4 class="text-lg font-semibold">Ringkasan Order</h4>
+            <div class="flex justify-between text-sm text-slate-600">
+              <span>Subtotal</span>
+              <span id="subtotalDisplay">IDR 0</span>
+            </div>
+            <div class="flex justify-between text-sm text-slate-600">
+              <span>Pengiriman</span>
+              <span class="text-green-600 font-semibold">Gratis</span>
+            </div>
+            <div
+              class="pt-4 border-t border-slate-200 flex justify-between font-semibold text-lg"
+            >
+              <span>Total</span>
+              <span id="totalDisplay">IDR 0</span>
+            </div>
+            <div class="space-y-3">
+              <label for="voucher" class="text-sm text-slate-500"
+                >Voucher / kode referral</label
+              >
+              <div class="flex gap-2">
+                <input
+                  id="voucher"
+                  type="text"
+                  placeholder="Masukkan kode"
+                  class="flex-1 px-4 py-2 rounded-xl border border-slate-300 text-sm"
+                />
+                <button
+                  id="applyVoucher"
+                  class="px-4 py-2 rounded-xl bg-slate-900 text-white text-sm"
+                >
+                  Gunakan
+                </button>
+              </div>
+              <p id="voucherMessage" class="text-xs text-orange-500"></p>
+            </div>
+            <button
+              id="checkoutBtn"
+              class="w-full py-3 rounded-2xl bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold"
+            >
+              Checkout Sekarang
+            </button>
+          </div>
+
+          <div
+            class="rounded-3xl border border-slate-200 bg-white p-6 space-y-4"
+          >
+            <h4 class="font-semibold">Detail Pengiriman</h4>
+            <form id="checkoutForm" class="space-y-4">
+              <input
+                type="text"
+                placeholder="Nama Lengkap"
+                class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Nomor WhatsApp"
+                class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+                required
+              />
+              <textarea
+                placeholder="Alamat lengkap & catatan kurir"
+                class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+                rows="3"
+                required
+              ></textarea>
+              <select
+                class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+                required
+              >
+                <option value="">Pilih Jasa Pengiriman</option>
+                <option value="gosend">GoSend (Khusus Jabodetabek)</option>
+                <option value="jne">JNE YES</option>
+                <option value="sicepat">SiCepat BEST</option>
+                <option value="pickup">Pick-up Showroom Jakarta</option>
+              </select>
+              <button
+                type="submit"
+                class="w-full py-3 rounded-2xl border border-slate-900 text-slate-900 font-semibold hover:bg-slate-900 hover:text-white transition"
+              >
+                Simpan Detail
+              </button>
+            </form>
+            <p class="text-xs text-slate-500">
+              Data Anda aman dan hanya digunakan untuk keperluan pengiriman &
+              konfirmasi pesanan.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="testimoni" class="bg-slate-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 space-y-12">
+          <div class="text-center space-y-3">
+            <p class="text-sm uppercase tracking-[0.3em] text-orange-300">
+              Cerita Pelanggan
+            </p>
+            <h3 class="text-3xl font-bold">
+              Mengapa mereka jatuh cinta pada AromaVibe
+            </h3>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <article class="rounded-3xl bg-white/5 p-6 border border-white/10">
+              <p class="text-lg leading-relaxed">
+                “Serenity Oud jadi identitas aroma baru saya. Banyak klien
+                menanyakan parfum apa yang saya pakai. Ketahanannya luar biasa!”
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=200&q=60"
+                  alt="Testimonial"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-semibold">Patricia, Creative Director</p>
+                  <p class="text-sm text-slate-400">Jakarta Selatan</p>
+                </div>
+              </div>
+            </article>
+            <article class="rounded-3xl bg-white/5 p-6 border border-white/10">
+              <p class="text-lg leading-relaxed">
+                “Tim AromaVibe bantu pilihkan parfum untuk pernikahan kami.
+                Aromanya elegan dan meninggalkan memori manis.”
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=60"
+                  alt="Testimonial"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-semibold">Dina & Ferdy</p>
+                  <p class="text-sm text-slate-400">Bandung</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="kontak"
+        class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10"
+      >
+        <div class="space-y-4">
+          <p
+            class="text-sm uppercase tracking-widest text-orange-500 font-semibold"
+          >
+            Konsultasi Personal
+          </p>
+          <h3 class="text-3xl font-bold">
+            Butuh bantuan memilih aroma favorit?
+          </h3>
+          <p class="text-slate-600">
+            Tim perfumer kami siap membantu Anda menentukan aroma sesuai
+            kepribadian dan kebutuhan acara spesial.
+          </p>
+          <div
+            class="rounded-3xl bg-white border border-slate-200 p-6 space-y-3 text-sm"
+          >
+            <p class="font-semibold text-slate-900">Showroom & Atelier</p>
+            <p class="text-slate-600">
+              Jl. Wijaya XI No. 21, Kebayoran Baru, Jakarta Selatan
+            </p>
+            <p class="text-slate-600">Senin - Sabtu • 10.00-20.00</p>
+            <p class="text-slate-600">WhatsApp Concierge: +62 812 1234 5678</p>
+          </div>
+        </div>
+        <form
+          id="contactForm"
+          class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4"
+        >
+          <input
+            type="text"
+            placeholder="Nama Lengkap"
+            class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+            required
+          />
+          <select
+            class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+            required
+          >
+            <option value="">Tujuan Konsultasi</option>
+            <option>Harian / Signature scent</option>
+            <option>Hadiah spesial</option>
+            <option>Wedding scent</option>
+            <option>Corporate gifting</option>
+          </select>
+          <textarea
+            placeholder="Ceritakan preferensi aroma Anda"
+            class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm"
+            rows="4"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-3 rounded-2xl bg-slate-900 text-white font-semibold"
+          >
+            Jadwalkan Konsultasi
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-10">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm"
+      >
+        <p>© 2025 AromaVibe. All rights reserved.</p>
+        <div class="flex gap-4 text-slate-300">
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">TikTok</a>
+          <a href="#" class="hover:text-white">YouTube</a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="cartDrawer"
+      class="fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-30 flex flex-col"
+    >
+      <div
+        class="p-6 border-b border-slate-200 flex items-center justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold">Keranjang Aktif</p>
+          <p class="text-sm text-slate-500">Produk siap checkout</p>
+        </div>
+        <button
+          id="closeDrawer"
+          class="text-slate-500 hover:text-slate-900 text-xl"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto" id="drawerBody"></div>
+      <div class="p-6 border-t border-slate-200 space-y-2">
+        <div class="flex justify-between text-sm text-slate-600">
+          <span>Total</span>
+          <span id="drawerTotal" class="font-semibold text-slate-900"
+            >IDR 0</span
+          >
+        </div>
+        <button
+          class="w-full py-3 rounded-2xl bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold"
+        >
+          Lanjut ke Checkout
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 px-4 py-3 rounded-2xl text-sm font-medium hidden"
+    ></div>
+
+    <script>
+      const products = [
+        {
+          id: "serenity-oud",
+          name: "Serenity Oud",
+          notes: "Oud Cambodia • Patchouli • Vanilla Bourbon",
+          price: 985000,
+          category: "woody",
+          rating: 4.9,
+          image:
+            "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "aurora-bloom",
+          name: "Aurora Bloom",
+          notes: "Peony • Freesia • Musk",
+          price: 875000,
+          category: "floral",
+          rating: 4.8,
+          image:
+            "https://images.unsplash.com/photo-1509057199576-632a47484ece?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "noir-suede",
+          name: "Noir Suede",
+          notes: "Black Pepper • Suede • Cedar",
+          price: 1050000,
+          category: "oriental",
+          rating: 4.7,
+          image:
+            "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "citrus-verve",
+          name: "Citrus Verve",
+          notes: "Yuzu • Neroli • Vetiver",
+          price: 765000,
+          category: "citrus",
+          rating: 4.6,
+          image:
+            "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "velvet-musk",
+          name: "Velvet Musk",
+          notes: "Cashmere • Tonka • White Musk",
+          price: 920000,
+          category: "musk",
+          rating: 4.8,
+          image:
+            "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "amber-luxe",
+          name: "Amber Luxe",
+          notes: "Amber • Saffron • Plum",
+          price: 1150000,
+          category: "oriental",
+          rating: 4.9,
+          image:
+            "https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?auto=format&fit=crop&w=600&q=80",
+        },
+      ];
+
+      const cart = [];
+      let voucherApplied = null;
+
+      const productGrid = document.getElementById("productGrid");
+      const categorySelect = document.getElementById("categorySelect");
+      const searchInput = document.getElementById("searchInput");
+      const priceRange = document.getElementById("priceRange");
+      const priceLabel = document.getElementById("priceLabel");
+      const cartBody = document.getElementById("cartBody");
+      const cartCount = document.getElementById("cartCount");
+      const subtotalDisplay = document.getElementById("subtotalDisplay");
+      const totalDisplay = document.getElementById("totalDisplay");
+      const drawerBody = document.getElementById("drawerBody");
+      const drawerTotal = document.getElementById("drawerTotal");
+      const toast = document.getElementById("toast");
+
+      const cartDrawer = document.getElementById("cartDrawer");
+      const cartToggle = document.getElementById("cartToggle");
+      const closeDrawer = document.getElementById("closeDrawer");
+
+      const emptyCartBtn = document.getElementById("emptyCart");
+      const applyVoucherBtn = document.getElementById("applyVoucher");
+      const voucherInput = document.getElementById("voucher");
+      const voucherMessage = document.getElementById("voucherMessage");
+      const checkoutBtn = document.getElementById("checkoutBtn");
+      const checkoutForm = document.getElementById("checkoutForm");
+      const contactForm = document.getElementById("contactForm");
+
+      const formatIDR = (value) =>
+        new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          maximumFractionDigits: 0,
+        }).format(value);
+
+      function populateCategories() {
+        const unique = [...new Set(products.map((p) => p.category))];
+        unique.forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent =
+            category.charAt(0).toUpperCase() + category.slice(1);
+          categorySelect.appendChild(option);
+        });
+      }
+
+      function renderProducts(list) {
+        productGrid.innerHTML = "";
+        if (!list.length) {
+          productGrid.innerHTML =
+            '<div class="col-span-full text-center text-slate-500 py-10 border border-dashed border-slate-200 rounded-3xl">Produk tidak ditemukan sesuai filter.</div>';
+          return;
+        }
+
+        list.forEach((product) => {
+          const card = document.createElement("article");
+          card.className =
+            "rounded-3xl bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col";
+          card.innerHTML = `
+            <div class="relative">
+              <img src="${product.image}" alt="${
+            product.name
+          }" class="h-56 w-full object-cover" />
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs bg-white/90 text-slate-700 capitalize">${
+                product.category
+              }</span>
+              <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs bg-slate-900/90 text-white">★ ${
+                product.rating
+              }</span>
+            </div>
+            <div class="flex-1 p-6 flex flex-col gap-3">
+              <div>
+                <h4 class="text-lg font-semibold">${product.name}</h4>
+                <p class="text-sm text-slate-500">${product.notes}</p>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <div>
+                  <p class="text-slate-400 text-xs">Harga</p>
+                  <p class="text-xl font-bold">${formatIDR(product.price)}</p>
+                </div>
+                <button data-id="${
+                  product.id
+                }" class="addToCart px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-semibold">
+                  Tambah
+                </button>
+              </div>
+            </div>
+          `;
+          productGrid.appendChild(card);
+        });
+        attachAddToCartEvents();
+      }
+
+      function attachAddToCartEvents() {
+        document.querySelectorAll(".addToCart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const id = event.currentTarget.dataset.id;
+            const product = products.find((p) => p.id === id);
+            addToCart(product);
+          });
+        });
+      }
+
+      function addToCart(product) {
+        const existing = cart.find((item) => item.id === product.id);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ ...product, qty: 1 });
+        }
+        showToast(`${product.name} ditambahkan ke keranjang`);
+        updateCartUI();
+      }
+
+      function updateCartUI() {
+        cartBody.innerHTML = "";
+        drawerBody.innerHTML = "";
+
+        if (!cart.length) {
+          cartBody.innerHTML =
+            '<tr><td colspan="5" class="text-center text-slate-400 py-6">Keranjang kosong.</td></tr>';
+          drawerBody.innerHTML =
+            '<p class="text-center text-slate-500 py-10">Keranjang Anda kosong. Tambahkan parfum favorit Anda terlebih dahulu.</p>';
+        } else {
+          cart.forEach((item) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td class="px-4 py-4">
+                <div class="flex items-center gap-3">
+                  <img src="${item.image}" alt="${
+              item.name
+            }" class="w-14 h-14 rounded-2xl object-cover" />
+                  <div>
+                    <p class="font-medium">${item.name}</p>
+                    <p class="text-xs text-slate-500">${item.notes}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-4 text-sm">${formatIDR(item.price)}</td>
+              <td class="px-4 py-4">
+                <div class="inline-flex items-center border border-slate-200 rounded-full overflow-hidden">
+                  <button data-id="${
+                    item.id
+                  }" class="qtyMinus px-3 py-1 text-lg">-</button>
+                  <span class="px-4">${item.qty}</span>
+                  <button data-id="${
+                    item.id
+                  }" class="qtyPlus px-3 py-1 text-lg">+</button>
+                </div>
+              </td>
+              <td class="px-4 py-4 font-semibold">${formatIDR(
+                item.price * item.qty
+              )}</td>
+              <td class="px-4 py-4 text-right">
+                <button data-id="${
+                  item.id
+                }" class="removeItem text-slate-400 hover:text-red-500">Hapus</button>
+              </td>
+            `;
+            cartBody.appendChild(row);
+
+            const card = document.createElement("div");
+            card.className =
+              "p-4 border-b border-slate-100 flex items-center gap-4";
+            card.innerHTML = `
+              <img src="${item.image}" alt="${
+              item.name
+            }" class="w-16 h-16 rounded-2xl object-cover" />
+              <div class="flex-1">
+                <p class="font-medium">${item.name}</p>
+                <p class="text-xs text-slate-500">${
+                  item.qty
+                } botol • ${formatIDR(item.price * item.qty)}</p>
+              </div>
+              <div class="inline-flex items-center border border-slate-200 rounded-full overflow-hidden">
+                <button data-id="${
+                  item.id
+                }" class="qtyMinus px-3 py-1 text-lg">-</button>
+                <span class="px-3">${item.qty}</span>
+                <button data-id="${
+                  item.id
+                }" class="qtyPlus px-3 py-1 text-lg">+</button>
+              </div>
+            `;
+            drawerBody.appendChild(card);
+          });
+        }
+
+        attachCartEvents();
+        updateCartSummary();
+      }
+
+      function attachCartEvents() {
+        document
+          .querySelectorAll(".qtyMinus")
+          .forEach((btn) =>
+            btn.addEventListener("click", () =>
+              updateQuantity(btn.dataset.id, -1)
+            )
+          );
+        document
+          .querySelectorAll(".qtyPlus")
+          .forEach((btn) =>
+            btn.addEventListener("click", () =>
+              updateQuantity(btn.dataset.id, 1)
+            )
+          );
+        document
+          .querySelectorAll(".removeItem")
+          .forEach((btn) =>
+            btn.addEventListener("click", () => removeItem(btn.dataset.id))
+          );
+      }
+
+      function updateQuantity(id, delta) {
+        const item = cart.find((product) => product.id === id);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) {
+          removeItem(id);
+          return;
+        }
+        updateCartUI();
+      }
+
+      function removeItem(id) {
+        const index = cart.findIndex((product) => product.id === id);
+        if (index > -1) {
+          showToast(`${cart[index].name} dihapus dari keranjang`, "warning");
+          cart.splice(index, 1);
+          updateCartUI();
+        }
+      }
+
+      function updateCartSummary() {
+        const subtotal = cart.reduce(
+          (sum, item) => sum + item.price * item.qty,
+          0
+        );
+        const discount = voucherApplied === "AROMA10" ? subtotal * 0.1 : 0;
+        const total = subtotal - discount;
+
+        cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        subtotalDisplay.textContent = formatIDR(subtotal);
+        totalDisplay.textContent = formatIDR(total);
+        drawerTotal.textContent = formatIDR(total);
+      }
+
+      function showToast(message, type = "success") {
+        toast.textContent = message;
+        toast.className = `fixed bottom-6 right-6 px-4 py-3 rounded-2xl text-sm font-medium ${
+          type === "success"
+            ? "bg-slate-900 text-white"
+            : "bg-orange-100 text-orange-900"
+        }`;
+        toast.classList.remove("hidden");
+        setTimeout(() => toast.classList.add("hidden"), 2200);
+      }
+
+      function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categorySelect.value;
+        const maxPrice = Number(priceRange.value);
+
+        const filtered = products.filter((product) => {
+          const matchesSearch =
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.notes.toLowerCase().includes(searchTerm);
+          const matchesCategory =
+            selectedCategory === "all" || product.category === selectedCategory;
+          const matchesPrice = product.price <= maxPrice;
+          return matchesSearch && matchesCategory && matchesPrice;
+        });
+
+        renderProducts(filtered);
+      }
+
+      function emptyCart() {
+        if (!cart.length) return;
+        cart.length = 0;
+        voucherApplied = null;
+        voucherMessage.textContent = "";
+        voucherInput.value = "";
+        updateCartUI();
+        showToast("Keranjang telah dikosongkan", "warning");
+      }
+
+      function applyVoucher() {
+        const code = voucherInput.value.trim().toUpperCase();
+        if (!code) return;
+
+        if (code === "AROMA10") {
+          voucherApplied = code;
+          voucherMessage.textContent =
+            "Voucher berhasil! Diskon 10% diterapkan.";
+          voucherMessage.classList.remove("text-orange-500");
+          voucherMessage.classList.add("text-green-600");
+        } else {
+          voucherApplied = null;
+          voucherMessage.textContent =
+            "Kode tidak valid. Gunakan kode AROMA10.";
+          voucherMessage.classList.remove("text-green-600");
+          voucherMessage.classList.add("text-orange-500");
+        }
+        updateCartSummary();
+      }
+
+      function toggleDrawer(open) {
+        cartDrawer.style.transform = open
+          ? "translateX(0)"
+          : "translateX(100%)";
+      }
+
+      function handleCheckout() {
+        if (!cart.length) {
+          showToast("Keranjang masih kosong", "warning");
+          return;
+        }
+        toggleDrawer(true);
+      }
+
+      function formHandler(event, successMessage) {
+        event.preventDefault();
+        showToast(successMessage);
+        event.target.reset();
+      }
+
+      function init() {
+        populateCategories();
+        renderProducts(products);
+        priceLabel.textContent = "1.250.000";
+
+        searchInput.addEventListener("input", applyFilters);
+        categorySelect.addEventListener("change", applyFilters);
+        priceRange.addEventListener("input", () => {
+          const value = Number(priceRange.value);
+          priceLabel.textContent = new Intl.NumberFormat("id-ID").format(value);
+          applyFilters();
+        });
+
+        emptyCartBtn.addEventListener("click", emptyCart);
+        applyVoucherBtn.addEventListener("click", applyVoucher);
+        checkoutBtn.addEventListener("click", handleCheckout);
+        cartToggle.addEventListener("click", () => toggleDrawer(true));
+        closeDrawer.addEventListener("click", () => toggleDrawer(false));
+
+        checkoutForm.addEventListener("submit", (event) =>
+          formHandler(event, "Detail pengiriman tersimpan.")
+        );
+        contactForm.addEventListener("submit", (event) =>
+          formHandler(event, "Terima kasih! Team kami akan menghubungi Anda.")
+        );
+
+        document.addEventListener("keyup", (event) => {
+          if (event.key === "Escape") toggleDrawer(false);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>

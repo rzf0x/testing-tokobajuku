@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manajemen Garapan Airdrop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-900 text-gray-100 font-sans">
+    <div class="container mx-auto p-4 max-w-4xl">
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-blue-400 mb-2">
+          <i class="fas fa-parachute-box"></i> Airdrop Tracker
+        </h1>
+        <p class="text-gray-400">
+          Kelola wallet dan progress garapanmu di satu tempat.
+        </p>
+      </header>
+
+      <div
+        class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8 border border-gray-700"
+      >
+        <h2 class="text-xl font-semibold mb-4 text-white">
+          Tambah Garapan Baru
+        </h2>
+        <form id="airdropForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Nama Proyek</label>
+            <input
+              type="text"
+              id="projectName"
+              placeholder="Contoh: zkSync Era"
+              class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1"
+              >Jaringan / Chain</label
+            >
+            <input
+              type="text"
+              id="chain"
+              placeholder="Contoh: Ethereum, Solana"
+              class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1"
+              >Nama Wallet / Akun</label
+            >
+            <input
+              type="text"
+              id="walletName"
+              placeholder="Contoh: Metamask Utama (Akun 1)"
+              class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Status</label>
+            <select
+              id="status"
+              class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500"
+            >
+              <option value="Baru">Baru (Belum Disentuh)</option>
+              <option value="Proses">Sedang Dikerjakan (Daily/Weekly)</option>
+              <option value="Selesai">Selesai / Menunggu Snapshot</option>
+              <option value="Claimed">Sudah Claim / Cair</option>
+            </select>
+          </div>
+
+          <div class="md:col-span-2 mt-2">
+            <button
+              type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-200"
+            >
+              <i class="fas fa-plus-circle"></i> Simpan Garapan
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-700"
+      >
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-gray-700 text-gray-300 uppercase text-sm">
+              <tr>
+                <th class="p-4">Proyek</th>
+                <th class="p-4">Chain</th>
+                <th class="p-4">Wallet</th>
+                <th class="p-4">Status</th>
+                <th class="p-4 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="projectList" class="text-gray-300"></tbody>
+          </table>
+        </div>
+        <p id="emptyMsg" class="text-center p-4 text-gray-500 hidden">
+          Belum ada data garapan.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // 1. Inisialisasi: Ambil data dari LocalStorage saat website dibuka
+      document.addEventListener("DOMContentLoaded", loadProjects);
+
+      const form = document.getElementById("airdropForm");
+      const list = document.getElementById("projectList");
+      const emptyMsg = document.getElementById("emptyMsg");
+
+      // 2. Event Listener saat tombol Simpan ditekan
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Mencegah halaman refresh
+
+        // Mengambil nilai dari input
+        const project = {
+          id: Date.now(), // ID unik berdasarkan waktu
+          name: document.getElementById("projectName").value,
+          chain: document.getElementById("chain").value,
+          wallet: document.getElementById("walletName").value,
+          status: document.getElementById("status").value,
+        };
+
+        addProjectToStorage(project);
+        form.reset(); // Kosongkan form setelah simpan
+      });
+
+      // 3. Fungsi Menyimpan ke LocalStorage
+      function addProjectToStorage(project) {
+        let projects = getProjectsFromStorage();
+        projects.push(project);
+        localStorage.setItem("airdropProjects", JSON.stringify(projects));
+        renderTable();
+      }
+
+      // 4. Fungsi Mengambil dari LocalStorage
+      function getProjectsFromStorage() {
+        let projects;
+        if (localStorage.getItem("airdropProjects") === null) {
+          projects = [];
+        } else {
+          projects = JSON.parse(localStorage.getItem("airdropProjects"));
+        }
+        return projects;
+      }
+
+      // 5. Fungsi Menampilkan (Render) Tabel
+      function loadProjects() {
+        renderTable();
+      }
+
+      function renderTable() {
+        const projects = getProjectsFromStorage();
+        list.innerHTML = ""; // Reset tabel
+
+        if (projects.length === 0) {
+          emptyMsg.classList.remove("hidden");
+        } else {
+          emptyMsg.classList.add("hidden");
+        }
+
+        projects.forEach(function (project) {
+          // Tentukan warna badge status
+          let statusColor = "bg-gray-600";
+          if (project.status === "Proses") statusColor = "bg-yellow-600";
+          if (project.status === "Selesai") statusColor = "bg-green-600";
+          if (project.status === "Claimed") statusColor = "bg-purple-600";
+
+          const row = document.createElement("tr");
+          row.className =
+            "border-b border-gray-700 hover:bg-gray-750 transition";
+          row.innerHTML = `
+                    <td class="p-4 font-semibold text-white">${project.name}</td>
+                    <td class="p-4"><span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">${project.chain}</span></td>
+                    <td class="p-4 text-sm">${project.wallet}</td>
+                    <td class="p-4">
+                        <span class="${statusColor} text-white text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wide">${project.status}</span>
+                    </td>
+                    <td class="p-4 text-center">
+                        <button onclick="deleteProject(${project.id})" class="text-red-400 hover:text-red-600 transition">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+          list.appendChild(row);
+        });
+      }
+
+      // 6. Fungsi Hapus Data
+      function deleteProject(id) {
+        if (confirm("Yakin ingin menghapus garapan ini?")) {
+          let projects = getProjectsFromStorage();
+          // Filter data, buang yang ID-nya sama dengan yang dihapus
+          projects = projects.filter((project) => project.id !== id);
+          localStorage.setItem("airdropProjects", JSON.stringify(projects));
+          renderTable();
+        }
+      }
+    </script>
+  </body>
+</html>

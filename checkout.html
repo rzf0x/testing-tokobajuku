@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AromaVibe • Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .glass {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <header class="bg-white/90 border-b border-slate-200 sticky top-0 z-20">
+      <nav
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white font-semibold"
+          >
+            AV
+          </div>
+          <div>
+            <p class="font-semibold text-lg">AromaVibe</p>
+            <p class="text-xs text-slate-500">Signature Scents Boutique</p>
+          </div>
+        </a>
+        <div class="flex items-center gap-4 text-sm">
+          <span class="hidden sm:block text-slate-500"
+            >Butuh bantuan? +62 812 1234 5678</span
+          >
+          <a
+            href="index.html#keranjang"
+            class="px-4 py-2 rounded-full border border-slate-200 hover:border-slate-900"
+            >Kembali ke Keranjang</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-10">
+      <div
+        class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.35em] text-slate-500"
+      >
+        <span class="text-slate-900 font-semibold">Keranjang</span>
+        <span>•</span>
+        <span class="text-slate-900 font-semibold">Pengiriman</span>
+        <span>•</span>
+        <span class="text-orange-500 font-semibold">Pembayaran</span>
+        <span>•</span>
+        <span>Konfirmasi</span>
+      </div>
+
+      <section class="grid lg:grid-cols-[1.2fr,0.8fr] gap-8">
+        <div class="space-y-6">
+          <div class="glass rounded-3xl p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p
+                  class="text-sm uppercase tracking-[0.25em] text-orange-500 font-semibold"
+                >
+                  Ringkasan Pesanan
+                </p>
+                <h1 class="text-2xl font-semibold mt-1">
+                  3 item parfum premium
+                </h1>
+              </div>
+              <span class="text-sm text-slate-500">Invoice #ARV-2025-0118</span>
+            </div>
+            <div class="divide-y divide-slate-100 text-sm">
+              <div class="flex items-center gap-4 py-4">
+                <img
+                  src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=200&q=80"
+                  alt="Serenity Oud"
+                  class="w-16 h-16 rounded-2xl object-cover"
+                />
+                <div class="flex-1">
+                  <p class="font-semibold">Serenity Oud</p>
+                  <p class="text-slate-500 text-xs">60ml • Eau de Parfum</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-slate-400 text-xs">Qty 1</p>
+                  <p class="font-semibold">IDR 985.000</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 py-4">
+                <img
+                  src="https://images.unsplash.com/photo-1509057199576-632a47484ece?auto=format&fit=crop&w=200&q=80"
+                  alt="Aurora Bloom"
+                  class="w-16 h-16 rounded-2xl object-cover"
+                />
+                <div class="flex-1">
+                  <p class="font-semibold">Aurora Bloom</p>
+                  <p class="text-slate-500 text-xs">60ml • Eau de Parfum</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-slate-400 text-xs">Qty 1</p>
+                  <p class="font-semibold">IDR 875.000</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 py-4">
+                <img
+                  src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=200&q=80"
+                  alt="Noir Suede"
+                  class="w-16 h-16 rounded-2xl object-cover"
+                />
+                <div class="flex-1">
+                  <p class="font-semibold">Noir Suede</p>
+                  <p class="text-slate-500 text-xs">60ml • Eau de Parfum</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-slate-400 text-xs">Qty 1</p>
+                  <p class="font-semibold">IDR 1.050.000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center font-semibold"
+              >
+                1
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500">
+                  Alamat Pengiriman
+                </p>
+                <h2 class="text-lg font-semibold">Confirm recipient details</h2>
+              </div>
+            </div>
+            <form id="shippingForm" class="grid md:grid-cols-2 gap-4 text-sm">
+              <div class="md:col-span-1">
+                <label class="text-xs text-slate-500">Nama lengkap</label>
+                <input
+                  type="text"
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  placeholder="Alya Ramadhani"
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-xs text-slate-500">Nomor WhatsApp</label>
+                <input
+                  type="tel"
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  placeholder="+62 812 8888 9999"
+                  required
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="text-xs text-slate-500">Alamat lengkap</label>
+                <textarea
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  rows="3"
+                  placeholder="Jl. Wijaya XI No. 21, Kebayoran Baru, Jakarta Selatan 12170"
+                  required
+                ></textarea>
+              </div>
+              <div>
+                <label class="text-xs text-slate-500">Provinsi / Kota</label>
+                <input
+                  type="text"
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  placeholder="DKI Jakarta"
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-xs text-slate-500">Kode pos</label>
+                <input
+                  type="text"
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  placeholder="12170"
+                  required
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="text-xs text-slate-500">Catatan kurir</label>
+                <input
+                  type="text"
+                  class="w-full mt-1 px-4 py-3 rounded-2xl border border-slate-200"
+                  placeholder="Tinggalkan di concierge / security"
+                />
+              </div>
+              <div class="md:col-span-2 flex justify-end">
+                <button
+                  type="submit"
+                  class="px-5 py-2 rounded-full border border-slate-900 text-slate-900 font-semibold hover:bg-slate-900 hover:text-white transition"
+                >
+                  Simpan Alamat
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="glass rounded-3xl p-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center font-semibold"
+              >
+                2
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500">
+                  Metode Pengiriman
+                </p>
+                <h2 class="text-lg font-semibold">
+                  Same-day & next-day delivery
+                </h2>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <label
+                class="border border-slate-200 rounded-2xl p-4 flex flex-col gap-2 cursor-pointer hover:border-slate-900"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold">GoSend Instant</span>
+                  <input
+                    type="radio"
+                    name="shipping"
+                    class="accent-slate-900"
+                    value="gosend"
+                    checked
+                  />
+                </div>
+                <p class="text-slate-500 text-xs">
+                  Khusus area Jabodetabek • Estimasi 2-3 jam
+                </p>
+                <p class="text-sm font-semibold text-slate-900">IDR 35.000</p>
+              </label>
+              <label
+                class="border border-slate-200 rounded-2xl p-4 flex flex-col gap-2 cursor-pointer hover:border-slate-900"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold">JNE YES</span>
+                  <input
+                    type="radio"
+                    name="shipping"
+                    class="accent-slate-900"
+                    value="jne"
+                  />
+                </div>
+                <p class="text-slate-500 text-xs">
+                  Seluruh Indonesia • Estimasi 1-2 hari
+                </p>
+                <p class="text-sm font-semibold text-slate-900">
+                  IDR 0 (Promo)
+                </p>
+              </label>
+              <label
+                class="border border-slate-200 rounded-2xl p-4 flex flex-col gap-2 cursor-pointer hover:border-slate-900"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold">SiCepat BEST</span>
+                  <input
+                    type="radio"
+                    name="shipping"
+                    class="accent-slate-900"
+                    value="sicepat"
+                  />
+                </div>
+                <p class="text-slate-500 text-xs">
+                  Seluruh Indonesia • Estimasi 1 hari
+                </p>
+                <p class="text-sm font-semibold text-slate-900">IDR 25.000</p>
+              </label>
+              <label
+                class="border border-slate-200 rounded-2xl p-4 flex flex-col gap-2 cursor-pointer hover:border-slate-900"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold">Pick-up Showroom</span>
+                  <input
+                    type="radio"
+                    name="shipping"
+                    class="accent-slate-900"
+                    value="pickup"
+                  />
+                </div>
+                <p class="text-slate-500 text-xs">
+                  Jl. Wijaya XI No. 21, Jakarta Selatan
+                </p>
+                <p class="text-sm font-semibold text-slate-900">Free</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="glass rounded-3xl p-6 space-y-4">
+            <div>
+              <p
+                class="text-xs uppercase tracking-widest text-orange-500 font-semibold"
+              >
+                Pembayaran Aman
+              </p>
+              <h3 class="text-xl font-semibold mt-1">
+                Pilih metode pembayaran
+              </h3>
+            </div>
+            <div class="space-y-3 text-sm">
+              <label
+                class="flex items-center gap-3 border border-slate-200 rounded-2xl px-4 py-3 cursor-pointer hover:border-slate-900"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  class="accent-slate-900"
+                  value="va"
+                  checked
+                />
+                <div>
+                  <p class="font-semibold">Virtual Account (BCA/Mandiri/BNI)</p>
+                  <p class="text-xs text-slate-500">
+                    Otomatis terkonfirmasi setelah transfer
+                  </p>
+                </div>
+              </label>
+              <label
+                class="flex items-center gap-3 border border-slate-200 rounded-2xl px-4 py-3 cursor-pointer hover:border-slate-900"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  class="accent-slate-900"
+                  value="cc"
+                />
+                <div>
+                  <p class="font-semibold">Kartu Kredit / Debit</p>
+                  <p class="text-xs text-slate-500">
+                    Visa, MasterCard, dan Amex
+                  </p>
+                </div>
+              </label>
+              <label
+                class="flex items-center gap-3 border border-slate-200 rounded-2xl px-4 py-3 cursor-pointer hover:border-slate-900"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  class="accent-slate-900"
+                  value="ewallet"
+                />
+                <div>
+                  <p class="font-semibold">E-Wallet (OVO, GoPay, ShopeePay)</p>
+                  <p class="text-xs text-slate-500">
+                    Cashback hingga 15K saat promo
+                  </p>
+                </div>
+              </label>
+              <label
+                class="flex items-center gap-3 border border-slate-200 rounded-2xl px-4 py-3 cursor-pointer hover:border-slate-900"
+              >
+                <input
+                  type="radio"
+                  name="payment"
+                  class="accent-slate-900"
+                  value="paylater"
+                />
+                <div>
+                  <p class="font-semibold">PayLater 0% 3/6 bulan</p>
+                  <p class="text-xs text-slate-500">
+                    Akulaku • Kredivo • SpayLater
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div class="bg-slate-900 text-white rounded-2xl px-4 py-3 text-sm">
+              <p class="font-semibold">Catatan:</p>
+              <p>
+                Pesanan akan diproduksi dalam 24 jam setelah pembayaran
+                terkonfirmasi.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-6 space-y-4">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-slate-500">Subtotal</span>
+              <span class="font-semibold">IDR 2.910.000</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-slate-500">Pengiriman</span>
+              <span class="font-semibold text-green-600">Gratis</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-slate-500">Voucher AROMA10</span>
+              <span class="font-semibold text-orange-500">- IDR 291.000</span>
+            </div>
+            <div
+              class="pt-4 border-t border-slate-200 flex items-center justify-between"
+            >
+              <span class="font-semibold text-lg">Total</span>
+              <span class="text-2xl font-bold">IDR 2.619.000</span>
+            </div>
+            <button
+              id="confirmCheckout"
+              class="w-full py-3 rounded-2xl bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold"
+            >
+              Konfirmasi & Bayar
+            </button>
+            <p class="text-xs text-center text-slate-500">
+              Dengan menekan tombol di atas Anda menyetujui
+              <a href="#" class="underline">Syarat & Ketentuan</a> AromaVibe.
+            </p>
+          </div>
+
+          <div
+            class="rounded-3xl border border-dashed border-slate-300 p-6 space-y-3 text-sm"
+          >
+            <p class="font-semibold text-slate-900">Status pesanan real-time</p>
+            <ul class="space-y-2 text-slate-600">
+              <li>• Pembayaran terkonfirmasi</li>
+              <li>• Produksi & finishing botol (estimasi 24 jam)</li>
+              <li>• Quality control & pengetesan aroma</li>
+              <li>• Packing premium + kartu ucapan</li>
+              <li>• Pengiriman & tracking otomatis via WhatsApp</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-10">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm"
+      >
+        <p>© 2025 AromaVibe. Semua hak cipta dilindungi.</p>
+        <p class="text-slate-300">
+          Concierge 24/7 • WhatsApp +62 812 1234 5678
+        </p>
+      </div>
+    </footer>
+
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 hidden px-4 py-3 rounded-2xl text-sm font-semibold bg-slate-900 text-white"
+    ></div>
+
+    <script>
+      const shippingForm = document.getElementById("shippingForm");
+      const confirmBtn = document.getElementById("confirmCheckout");
+      const toast = document.getElementById("toast");
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.remove("hidden");
+        setTimeout(() => toast.classList.add("hidden"), 2500);
+      }
+
+      shippingForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        showToast("Alamat pengiriman tersimpan.");
+      });
+
+      confirmBtn.addEventListener("click", () => {
+        const payment = document.querySelector('input[name="payment"]:checked');
+        const shipping = document.querySelector(
+          'input[name="shipping"]:checked'
+        );
+        if (!payment || !shipping) {
+          showToast("Lengkapi metode pengiriman & pembayaran.");
+          return;
+        }
+        showToast("Pembayaran diproses...");
+        setTimeout(() => {
+          showToast("Pembayaran berhasil! Invoice dikirim ke email Anda.");
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

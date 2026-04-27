@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AromaVibe • Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .glass {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 25px 55px rgba(15, 23, 42, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+      <nav
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 text-white font-semibold flex items-center justify-center"
+          >
+            AV
+          </div>
+          <div>
+            <p class="font-semibold text-lg">AromaVibe Admin</p>
+            <p class="text-xs text-slate-500">Perfume house management</p>
+          </div>
+        </a>
+        <div class="flex items-center gap-4 text-sm">
+          <a
+            href="checkout.html"
+            class="px-4 py-2 rounded-full border border-slate-200"
+            >Halaman Checkout</a
+          >
+          <button
+            id="logoutBtn"
+            class="px-4 py-2 rounded-full bg-slate-900 text-white"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-10">
+      <section>
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p
+              class="text-xs uppercase tracking-[0.35em] text-orange-500 font-semibold"
+            >
+              Realtime Overview
+            </p>
+            <h1 class="text-3xl font-bold mt-2">
+              Dashboard Penjualan & Operasional
+            </h1>
+            <p class="text-slate-500 text-sm mt-2">
+              Update per 5 menit • 25 November 2025
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3 text-sm">
+            <button
+              data-range="today"
+              class="timeframe-btn px-4 py-2 rounded-full border border-slate-200 hover:border-slate-900"
+            >
+              Hari ini
+            </button>
+            <button
+              data-range="week"
+              class="timeframe-btn px-4 py-2 rounded-full border border-slate-200"
+            >
+              7 hari
+            </button>
+            <button
+              data-range="month"
+              class="timeframe-btn px-4 py-2 rounded-full border border-slate-200"
+            >
+              30 hari
+            </button>
+            <button
+              data-range="custom"
+              class="timeframe-btn px-4 py-2 rounded-full bg-slate-900 text-white"
+            >
+              Custom Range
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="glass rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Revenue Hari Ini
+          </p>
+          <p id="metric-revenue" class="text-3xl font-bold">IDR 0</p>
+          <p
+            id="metric-revenue-change"
+            class="text-sm text-green-600 font-semibold"
+          >
+            ↑ 0% vs kemarin
+          </p>
+        </article>
+        <article class="glass rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Order Berjalan
+          </p>
+          <p id="metric-orders" class="text-3xl font-bold">0 pesanan</p>
+          <p id="metric-orders-note" class="text-sm text-slate-500">-</p>
+        </article>
+        <article class="glass rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Stok Tersedia
+          </p>
+          <p id="metric-stock" class="text-3xl font-bold">0 botol</p>
+          <p
+            id="metric-stock-note"
+            class="text-sm text-orange-500 font-semibold"
+          >
+            -
+          </p>
+        </article>
+        <article class="glass rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Member Aktif
+          </p>
+          <p id="metric-members" class="text-3xl font-bold">0 VIP</p>
+          <p id="metric-members-note" class="text-sm text-slate-500">-</p>
+        </article>
+      </section>
+
+      <section class="grid lg:grid-cols-[1.4fr,0.6fr] gap-6 items-start">
+        <article
+          class="rounded-3xl bg-white border border-slate-200 overflow-hidden"
+        >
+          <header
+            class="px-6 py-4 border-b border-slate-100 flex items-center justify-between"
+          >
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">
+                Pesanan Terbaru
+              </p>
+              <h2 class="text-xl font-semibold">Need approval & fulfillment</h2>
+            </div>
+            <button class="text-sm text-slate-500 hover:text-slate-900">
+              Lihat semua
+            </button>
+          </header>
+          <div
+            class="px-6 py-4 flex flex-wrap gap-3 border-b border-slate-100 text-sm bg-slate-50"
+          >
+            <div class="flex items-center gap-2 flex-1 min-w-[200px]">
+              <input
+                id="orderSearch"
+                type="search"
+                placeholder="Cari customer / kota / produk..."
+                class="flex-1 px-4 py-2 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              />
+            </div>
+            <div class="flex items-center gap-2">
+              <label
+                for="orderStatusFilter"
+                class="text-xs text-slate-500 uppercase tracking-widest"
+                >Status</label
+              >
+              <select
+                id="orderStatusFilter"
+                class="px-4 py-2 rounded-2xl border border-slate-200 text-sm"
+              >
+                <option value="all">Semua</option>
+                <option value="packing">Packing</option>
+                <option value="qc">Menunggu QC</option>
+                <option value="courier">On courier</option>
+                <option value="issue">Payment issue</option>
+              </select>
+            </div>
+          </div>
+          <table class="min-w-full text-sm">
+            <thead class="bg-slate-50 text-left text-slate-500">
+              <tr>
+                <th class="px-6 py-3 font-medium">Order ID</th>
+                <th class="px-6 py-3 font-medium">Customer</th>
+                <th class="px-6 py-3 font-medium">Produk</th>
+                <th class="px-6 py-3 font-medium">Status</th>
+                <th class="px-6 py-3 font-medium text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody
+              id="orderTableBody"
+              class="divide-y divide-slate-100"
+            ></tbody>
+          </table>
+        </article>
+
+        <article
+          class="rounded-3xl bg-white border border-slate-200 p-6 space-y-5"
+        >
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">
+              Prioritas Hari Ini
+            </p>
+            <h2 class="text-xl font-semibold">Operational queue</h2>
+          </div>
+          <ul id="priorityList" class="space-y-4 text-sm"></ul>
+          <div
+            class="border border-dashed border-slate-300 rounded-2xl p-4 text-sm"
+          >
+            <p class="font-semibold">Catatan Perfumer:</p>
+            <p class="text-slate-600">
+              Batch oud terbaru tiba Jumat. Jadwalkan pre-order release jam
+              19.00.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid lg:grid-cols-2 gap-6">
+        <article
+          class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">
+                Monitor Stok
+              </p>
+              <h2 class="text-xl font-semibold">SKU kritikal</h2>
+            </div>
+            <button
+              id="updateStockBtn"
+              class="text-sm text-slate-500 hover:text-slate-900"
+            >
+              Update stok
+            </button>
+          </div>
+          <table class="w-full text-sm">
+            <thead class="text-left text-slate-500">
+              <tr>
+                <th class="py-2">Produk</th>
+                <th class="py-2">Stok</th>
+                <th class="py-2">Status</th>
+                <th class="py-2 text-right">Reorder</th>
+              </tr>
+            </thead>
+            <tbody
+              id="stockTableBody"
+              class="divide-y divide-slate-100"
+            ></tbody>
+          </table>
+        </article>
+
+        <article
+          class="rounded-3xl bg-white border border-slate-200 p-6 space-y-4"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">
+                Member VIP
+              </p>
+              <h2 class="text-xl font-semibold">Top spenders</h2>
+            </div>
+            <button
+              id="manageMemberBtn"
+              class="text-sm text-slate-500 hover:text-slate-900"
+            >
+              Kelola member
+            </button>
+          </div>
+          <ul id="memberList" class="space-y-4 text-sm"></ul>
+          <div
+            class="rounded-2xl border border-dashed border-slate-300 p-4 text-xs text-slate-500"
+          >
+            Segera kirim exclusive preview untuk koleksi Aurum Bloom ke top 20
+            member.
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-8">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm"
+      >
+        <p>© 2025 AromaVibe Internal Dashboard.</p>
+        <p class="text-slate-400">
+          Confidential • Tidak untuk distribusi eksternal
+        </p>
+      </div>
+    </footer>
+
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 hidden px-4 py-3 rounded-2xl bg-slate-900 text-white text-sm font-semibold"
+    ></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toast = document.getElementById("toast");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const updateStockBtn = document.getElementById("updateStockBtn");
+        const manageMemberBtn = document.getElementById("manageMemberBtn");
+        const timeframeButtons = document.querySelectorAll(".timeframe-btn");
+
+        const metricRevenue = document.getElementById("metric-revenue");
+        const metricRevenueChange = document.getElementById(
+          "metric-revenue-change"
+        );
+        const metricOrders = document.getElementById("metric-orders");
+        const metricOrdersNote = document.getElementById("metric-orders-note");
+        const metricStock = document.getElementById("metric-stock");
+        const metricStockNote = document.getElementById("metric-stock-note");
+        const metricMembers = document.getElementById("metric-members");
+        const metricMembersNote = document.getElementById(
+          "metric-members-note"
+        );
+
+        const orderTableBody = document.getElementById("orderTableBody");
+        const orderSearchInput = document.getElementById("orderSearch");
+        const orderStatusFilter = document.getElementById("orderStatusFilter");
+        const priorityList = document.getElementById("priorityList");
+        const stockTableBody = document.getElementById("stockTableBody");
+        const memberList = document.getElementById("memberList");
+
+        const metricsData = {
+          today: {
+            revenue: { value: 38400000, change: 12, compare: "kemarin" },
+            orders: { value: 124, note: "54 siap dikirim • 9 tertahan QC" },
+            stock: { value: 1286, note: "15 SKU butuh restock" },
+            members: { value: 4812, note: "89 member baru minggu ini" },
+          },
+          week: {
+            revenue: { value: 241000000, change: 8, compare: "pekan lalu" },
+            orders: {
+              value: 768,
+              note: "312 selesai • 47 tertahan pembayaran",
+            },
+            stock: { value: 1210, note: "Restock terjadwal Jumat" },
+            members: { value: 4732, note: "+312 member baru" },
+          },
+          month: {
+            revenue: { value: 987000000, change: 5, compare: "bulan lalu" },
+            orders: { value: 2984, note: "Tingkat retur 1.3%" },
+            stock: { value: 1165, note: "9 SKU di bawah safety stock" },
+            members: { value: 4610, note: "1.204 repeat order" },
+          },
+          custom: {
+            revenue: {
+              value: 42500000,
+              change: -3,
+              compare: "periode sebelumnya",
+            },
+            orders: { value: 162, note: "12 dibatalkan customer" },
+            stock: { value: 1312, note: "Stok aman untuk 18 hari" },
+            members: { value: 4901, note: "120 undangan VIP pending" },
+          },
+        };
+
+        const orders = [
+          {
+            id: "ARV-2123",
+            customer: "Shafa Aulia",
+            city: "Jakarta Selatan",
+            products: "Serenity Oud (2)",
+            status: "packing",
+            total: 1970000,
+          },
+          {
+            id: "ARV-2124",
+            customer: "Gilang Mahendra",
+            city: "Bandung",
+            products: "Aurora Bloom (1), Velvet Musk (1)",
+            status: "qc",
+            total: 1795000,
+          },
+          {
+            id: "ARV-2125",
+            customer: "Nadya Lestari",
+            city: "Surabaya",
+            products: "Amber Luxe (1)",
+            status: "courier",
+            total: 1150000,
+          },
+          {
+            id: "ARV-2126",
+            customer: "Evander Yong",
+            city: "Medan",
+            products: "Citrus Verve (1)",
+            status: "issue",
+            total: 765000,
+          },
+          {
+            id: "ARV-2127",
+            customer: "Risa Gunawan",
+            city: "Jakarta Utara",
+            products: "Serenity Oud (1), Aurora Bloom (1)",
+            status: "packing",
+            total: 1860000,
+          },
+        ];
+
+        const statusMeta = {
+          packing: {
+            label: "Packing",
+            badge: "bg-emerald-50 text-emerald-600",
+          },
+          qc: { label: "Menunggu QC", badge: "bg-orange-50 text-orange-600" },
+          courier: { label: "On courier", badge: "bg-sky-50 text-sky-700" },
+          issue: { label: "Payment issue", badge: "bg-rose-50 text-rose-600" },
+        };
+
+        const priorities = [
+          {
+            title: "Dispatch 54 paket same-day",
+            note: "Deadline 15.00 WIB",
+            accent: "bg-orange-100 text-orange-600",
+          },
+          {
+            title: "QC batch Aurum Bloom",
+            note: "87 botol menunggu approval",
+            accent: "bg-slate-100 text-slate-700",
+          },
+          {
+            title: "Follow-up 9 pembayaran pending",
+            note: "Tim finance",
+            accent: "bg-emerald-100 text-emerald-600",
+          },
+        ];
+
+        const stockItems = [
+          { sku: "Amber Luxe", stock: 36, reorder: 100 },
+          { sku: "Velvet Musk", stock: 74, reorder: 60 },
+          { sku: "Citrus Verve", stock: 145, reorder: 0 },
+          { sku: "Noir Suede", stock: 58, reorder: 80 },
+        ];
+
+        const members = [
+          {
+            name: "Patricia Adisurya",
+            program: "Signature scent program",
+            spend: 23700000,
+            orders: 12,
+            avatar:
+              "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=60",
+          },
+          {
+            name: "Raka Maheswara",
+            program: "Corporate gifting",
+            spend: 18200000,
+            orders: 9,
+            avatar:
+              "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=60",
+          },
+          {
+            name: "Dina Kusuma",
+            program: "Wedding scent",
+            spend: 14500000,
+            orders: 7,
+            avatar:
+              "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=200&q=60",
+          },
+        ];
+
+        function showToast(message) {
+          toast.textContent = message;
+          toast.classList.remove("hidden");
+          setTimeout(() => toast.classList.add("hidden"), 2200);
+        }
+
+        const formatCurrency = (value) =>
+          new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0,
+          }).format(value);
+
+        const formatNumber = (value) =>
+          new Intl.NumberFormat("id-ID").format(value);
+
+        function setActiveRange(range) {
+          timeframeButtons.forEach((btn) => {
+            const isActive = btn.dataset.range === range;
+            btn.classList.remove(
+              "border-slate-900",
+              "bg-slate-900",
+              "text-white",
+              "text-slate-900"
+            );
+            btn.classList.add(
+              isActive ? "border-slate-900" : "border-slate-200"
+            );
+            btn.classList.toggle("bg-slate-900", isActive);
+            btn.classList.toggle("text-white", isActive);
+            if (!isActive) btn.classList.add("text-slate-900");
+          });
+        }
+
+        function renderMetrics(range = "today") {
+          const data = metricsData[range] || metricsData.today;
+          const revenueTrend = data.revenue.change >= 0 ? "↑" : "↓";
+
+          metricRevenue.textContent = formatCurrency(data.revenue.value);
+          metricRevenueChange.textContent = `${revenueTrend} ${Math.abs(
+            data.revenue.change
+          )}% vs ${data.revenue.compare}`;
+          metricRevenueChange.className =
+            "text-sm font-semibold " +
+            (data.revenue.change >= 0 ? "text-green-600" : "text-rose-600");
+
+          metricOrders.textContent = `${formatNumber(
+            data.orders.value
+          )} pesanan`;
+          metricOrdersNote.textContent = data.orders.note;
+          metricStock.textContent = `${formatNumber(data.stock.value)} botol`;
+          metricStockNote.textContent = data.stock.note;
+          metricMembers.textContent = `${formatNumber(data.members.value)} VIP`;
+          metricMembersNote.textContent = data.members.note;
+
+          setActiveRange(range);
+        }
+
+        function renderOrders() {
+          const term = orderSearchInput.value.trim().toLowerCase();
+          const statusFilter = orderStatusFilter.value;
+
+          const filtered = orders.filter((order) => {
+            const statusMatch =
+              statusFilter === "all" ? true : order.status === statusFilter;
+            const text =
+              `${order.id} ${order.customer} ${order.city} ${order.products}`.toLowerCase();
+            const searchMatch = !term || text.includes(term);
+            return statusMatch && searchMatch;
+          });
+
+          if (!filtered.length) {
+            orderTableBody.innerHTML =
+              '<tr><td colspan="5" class="px-6 py-6 text-center text-slate-400">Tidak ada pesanan yang cocok.</td></tr>';
+            return;
+          }
+
+          orderTableBody.innerHTML = filtered
+            .map((order) => {
+              const meta = statusMeta[order.status] || statusMeta.packing;
+              return `
+              <tr>
+                <td class="px-6 py-4 font-semibold text-slate-900">#${
+                  order.id
+                }</td>
+                <td class="px-6 py-4">
+                  <p>${order.customer}</p>
+                  <p class="text-xs text-slate-500">${order.city}</p>
+                </td>
+                <td class="px-6 py-4 text-slate-500">${order.products}</td>
+                <td class="px-6 py-4">
+                  <span class="px-3 py-1 rounded-full text-xs ${meta.badge}">${
+                meta.label
+              }</span>
+                </td>
+                <td class="px-6 py-4 text-right font-semibold">${formatCurrency(
+                  order.total
+                )}</td>
+              </tr>
+            `;
+            })
+            .join("");
+        }
+
+        function renderPriorities() {
+          priorityList.innerHTML = priorities
+            .map(
+              (item, index) => `
+              <li class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl ${
+                  item.accent
+                } font-semibold flex items-center justify-center">
+                  ${index + 1}
+                </span>
+                <div>
+                  <p class="font-semibold">${item.title}</p>
+                  <p class="text-xs text-slate-500">${item.note}</p>
+                </div>
+              </li>
+            `
+            )
+            .join("");
+        }
+
+        function deriveStockStatus(value) {
+          if (value < 50)
+            return { label: "Critical", badge: "bg-rose-50 text-rose-600" };
+          if (value < 90)
+            return { label: "Low", badge: "bg-orange-50 text-orange-600" };
+          return { label: "Safe", badge: "bg-emerald-50 text-emerald-600" };
+        }
+
+        function renderStock() {
+          stockTableBody.innerHTML = stockItems
+            .map((item) => {
+              const status = deriveStockStatus(item.stock);
+              const disabled = item.reorder === 0;
+              const buttonLabel = disabled ? "OK" : `+${item.reorder}`;
+              const buttonClass = disabled
+                ? "text-slate-400 font-semibold"
+                : "text-slate-900 font-semibold";
+              const buttonAttrs = disabled
+                ? "disabled"
+                : `data-reorder="${item.sku}"`;
+              return `
+              <tr>
+                <td class="py-3 font-semibold">${item.sku}</td>
+                <td class="py-3 text-slate-500">${formatNumber(
+                  item.stock
+                )} botol</td>
+                <td class="py-3">
+                  <span class="px-3 py-1 rounded-full text-xs ${
+                    status.badge
+                  }">${status.label}</span>
+                </td>
+                <td class="py-3 text-right">
+                  <button class="${buttonClass}" ${buttonAttrs}>${buttonLabel}</button>
+                </td>
+              </tr>
+            `;
+            })
+            .join("");
+
+          document.querySelectorAll("[data-reorder]").forEach((button) =>
+            button.addEventListener("click", () => {
+              const sku = button.dataset.reorder;
+              const item = stockItems.find((stock) => stock.sku === sku);
+              if (!item) return;
+              item.stock += item.reorder;
+              showToast(`Reorder ${sku} +${item.reorder} botol diproses.`);
+              renderStock();
+            })
+          );
+        }
+
+        function renderMembers() {
+          memberList.innerHTML = members
+            .map(
+              (member) => `
+              <li class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <img src="${
+                    member.avatar
+                  }" class="w-11 h-11 rounded-full object-cover" alt="${
+                member.name
+              }" />
+                  <div>
+                    <p class="font-semibold">${member.name}</p>
+                    <p class="text-xs text-slate-500">${member.program}</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-semibold">${formatCurrency(member.spend)}</p>
+                  <p class="text-xs text-slate-500">${member.orders} order</p>
+                </div>
+              </li>
+            `
+            )
+            .join("");
+        }
+
+        orderSearchInput.addEventListener("input", () => renderOrders());
+        orderStatusFilter.addEventListener("change", () => renderOrders());
+
+        timeframeButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const range = button.dataset.range;
+            renderMetrics(range);
+            showToast(
+              `Data ditampilkan untuk rentang ${button.textContent.trim()}.`
+            );
+          });
+        });
+
+        logoutBtn.addEventListener("click", () =>
+          showToast("Anda telah logout dari sesi admin.")
+        );
+        updateStockBtn.addEventListener("click", () =>
+          showToast("Data stok diperbarui ke ERP.")
+        );
+        manageMemberBtn.addEventListener("click", () =>
+          showToast("Portal member dibuka di tab baru.")
+        );
+
+        renderMetrics("today");
+        renderOrders();
+        renderPriorities();
+        renderStock();
+        renderMembers();
+      });
+    </script>
+  </body>
+</html>
