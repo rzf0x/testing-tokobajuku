@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -58,7 +58,7 @@
           </div>
           <div>
             <p class="font-semibold text-lg">AromaVibe</p>
-            <p class="text-xs text-slate-500">Signature Scents Boutique</p>
+            <p class="text-xs text-slate-500">Aku turu idn banget</p>
           </div>
         </div>
         <div class="hidden md:flex gap-6 text-sm text-slate-600">
@@ -726,8 +726,8 @@
           card.innerHTML = `
             <div class="relative">
               <img src="${product.image}" alt="${
-            product.name
-          }" class="h-56 w-full object-cover" />
+                product.name
+              }" class="h-56 w-full object-cover" />
               <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs bg-white/90 text-slate-700 capitalize">${
                 product.category
               }</span>
@@ -795,8 +795,8 @@
               <td class="px-4 py-4">
                 <div class="flex items-center gap-3">
                   <img src="${item.image}" alt="${
-              item.name
-            }" class="w-14 h-14 rounded-2xl object-cover" />
+                    item.name
+                  }" class="w-14 h-14 rounded-2xl object-cover" />
                   <div>
                     <p class="font-medium">${item.name}</p>
                     <p class="text-xs text-slate-500">${item.notes}</p>
@@ -816,7 +816,7 @@
                 </div>
               </td>
               <td class="px-4 py-4 font-semibold">${formatIDR(
-                item.price * item.qty
+                item.price * item.qty,
               )}</td>
               <td class="px-4 py-4 text-right">
                 <button data-id="${
@@ -831,8 +831,8 @@
               "p-4 border-b border-slate-100 flex items-center gap-4";
             card.innerHTML = `
               <img src="${item.image}" alt="${
-              item.name
-            }" class="w-16 h-16 rounded-2xl object-cover" />
+                item.name
+              }" class="w-16 h-16 rounded-2xl object-cover" />
               <div class="flex-1">
                 <p class="font-medium">${item.name}</p>
                 <p class="text-xs text-slate-500">${
@@ -862,20 +862,20 @@
           .querySelectorAll(".qtyMinus")
           .forEach((btn) =>
             btn.addEventListener("click", () =>
-              updateQuantity(btn.dataset.id, -1)
-            )
+              updateQuantity(btn.dataset.id, -1),
+            ),
           );
         document
           .querySelectorAll(".qtyPlus")
           .forEach((btn) =>
             btn.addEventListener("click", () =>
-              updateQuantity(btn.dataset.id, 1)
-            )
+              updateQuantity(btn.dataset.id, 1),
+            ),
           );
         document
           .querySelectorAll(".removeItem")
           .forEach((btn) =>
-            btn.addEventListener("click", () => removeItem(btn.dataset.id))
+            btn.addEventListener("click", () => removeItem(btn.dataset.id)),
           );
       }
 
@@ -902,7 +902,7 @@
       function updateCartSummary() {
         const subtotal = cart.reduce(
           (sum, item) => sum + item.price * item.qty,
-          0
+          0,
         );
         const discount = voucherApplied === "AROMA10" ? subtotal * 0.1 : 0;
         const total = subtotal - discount;
@@ -1012,10 +1012,10 @@
         closeDrawer.addEventListener("click", () => toggleDrawer(false));
 
         checkoutForm.addEventListener("submit", (event) =>
-          formHandler(event, "Detail pengiriman tersimpan.")
+          formHandler(event, "Detail pengiriman tersimpan."),
         );
         contactForm.addEventListener("submit", (event) =>
-          formHandler(event, "Terima kasih! Team kami akan menghubungi Anda.")
+          formHandler(event, "Terima kasih! Team kami akan menghubungi Anda."),
         );
 
         document.addEventListener("keyup", (event) => {
