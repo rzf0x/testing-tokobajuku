@@ -1,0 +1,22 @@
+name: Deploy Website ke cPanel
+
+on:
+  push:
+    branches:
+      - main # Script jalan tiap kamu push ke branch main
+
+jobs:
+  deploy:
+    name: Upload Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}   # Alamat host FTP (misal: ftp.domainkamu.com)
+          username: ${{ secrets.FTP_USERNAME }} # Username FTP cPanel
+          password: ${{ secrets.FTP_PASSWORD }} # Password FTP cPanel
+          server-dir: ./public_html/           # Folder tujuan di cPanel
